@@ -1,5 +1,3 @@
-# HELLO THIS IS A CHANGE
-
 extends KinematicBody2D
 
 var velocity = Vector2(0,0)
