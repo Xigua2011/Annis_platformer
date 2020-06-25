@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://characters/aliens/alien_pink.tscn" type="PackedScene" id=2]
 [ext_resource path="res://audio/digital_sfx/source/phaseJump1.ogg" type="AudioStream" id=3]
-[ext_resource path="res://characters/enemies/bee.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tilesets/abstract_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=7]
@@ -18,9 +17,6 @@ extents = Vector2( 22.5473, 45.1373 )
 
 [sub_resource type="AudioStreamRandomPitch" id=2]
 audio_stream = ExtResource( 3 )
-
-[sub_resource type="CircleShape2D" id=3]
-radius = 23.984
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 150, 100 )
@@ -39,7 +35,7 @@ position = Vector2( 506.082, 106.148 )
 texture = ExtResource( 10 )
 
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( 230, 200 )
+position = Vector2( 202.792, 204.081 )
 collision_mask = 31
 script = ExtResource( 1 )
 __meta__ = {
@@ -47,6 +43,7 @@ __meta__ = {
 }
 
 [node name="alien_pink" parent="player" instance=ExtResource( 2 )]
+frame = 1
 playing = true
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="player"]
@@ -63,7 +60,7 @@ limit_top = -300
 limit_bottom = 800
 
 [node name="player2" type="KinematicBody2D" parent="."]
-position = Vector2( 119.738, 200 )
+position = Vector2( 89.8098, 201.36 )
 collision_mask = 31
 script = ExtResource( 11 )
 __meta__ = {
@@ -78,20 +75,6 @@ shape = SubResource( 1 )
 
 [node name="phaseJump1" type="AudioStreamPlayer" parent="player2"]
 stream = SubResource( 2 )
-
-[node name="bee" type="RigidBody2D" parent="."]
-position = Vector2( 609.619, 28 )
-continuous_cd = 2
-linear_damp = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="collision_shape_2d" type="CollisionShape2D" parent="bee"]
-shape = SubResource( 3 )
-
-[node name="bee" parent="bee" instance=ExtResource( 4 )]
-position = Vector2( 0.385498, -0.257278 )
 
 [node name="tile_map2" type="TileMap" parent="."]
 tile_set = ExtResource( 5 )
@@ -136,13 +119,16 @@ position = Vector2( 10720.3, 239.493 )
 position = Vector2( -347.969, -31.5034 )
 
 [node name="enemy" parent="enemies" instance=ExtResource( 7 )]
-position = Vector2( 664.346, 305.829 )
+position = Vector2( 769.095, 322.153 )
+JUMP = 0
 
 [node name="enemy2" parent="enemies" instance=ExtResource( 7 )]
 position = Vector2( 1715.41, -27.8204 )
+JUMP = 100
 
 [node name="enemy3" parent="enemies" instance=ExtResource( 7 )]
 position = Vector2( 2485.82, -129.49 )
+JUMP = 300
 
 [node name="enemy4" parent="enemies" instance=ExtResource( 7 )]
 position = Vector2( 3386.53, -132.354 )

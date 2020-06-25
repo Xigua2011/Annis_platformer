@@ -3,6 +3,8 @@ extends KinematicBody2D
 var direction = Vector2.LEFT
 var velocity = Vector2(-50, 0)
 
+export var JUMP=200
+
 func _ready():
 	set_physics_process(false)
 
@@ -14,6 +16,9 @@ func _physics_process(delta):
 	
 	if is_on_wall():
 		direction = -direction
+		
+	if is_on_floor():
+		velocity.y = -JUMP
 		
 	for i in get_slide_count():
 		var collider = get_slide_collision(i).collider
