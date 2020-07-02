@@ -47,3 +47,8 @@ func _physics_process(delta):
 func kill():
 	get_tree().reload_current_scene()
 	
+
+
+func _on_Goal_body_entered(body):
+	print("hello")
+	get_tree().change_scene("res://you_won.tscn")

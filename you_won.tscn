@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://interface/themes/blue_theme.tres" type="Theme" id=2]
+[ext_resource path="res://you_won.gd" type="Script" id=3]
+[ext_resource path="res://interface/fonts/kenvector_future_20.tres" type="DynamicFont" id=4]
+
+[node name="control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -4.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="color_rect" type="ColorRect" parent="."]
+margin_left = 1.27454
+margin_top = -2.54916
+margin_right = 1025.27
+margin_bottom = 597.451
+color = Color( 0.898039, 0, 1, 1 )
+
+[node name="rich_text_label" type="RichTextLabel" parent="."]
+margin_left = 249.0
+margin_top = 270.0
+margin_right = 771.0
+margin_bottom = 325.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Well Done! You won :-)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button" type="Button" parent="."]
+margin_left = 445.0
+margin_top = 190.0
+margin_right = 593.0
+margin_bottom = 243.0
+custom_fonts/font = ExtResource( 4 )
+text = "press this!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="button" to="." method="_on_button_button_down"]
