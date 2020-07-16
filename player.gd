@@ -3,6 +3,8 @@ extends KinematicBody2D
 var velocity = Vector2(0,0)
 var jump_timer = 0
 
+export var JUMP_POWER = 600
+
 func _physics_process(delta):
 	if is_on_floor():
 		$alien_pink.animation = 'idle_front'
@@ -27,7 +29,7 @@ func _physics_process(delta):
 	if jump_timer > 0:
 		jump_timer -= delta
 		if Input.is_action_pressed('jump'):
-			velocity.y = -600
+			velocity.y = -JUMP_POWER
 			if not $phaseJump1.playing: $phaseJump1.play()
 
 	$alien_pink.flip_h = velocity.x < 0
@@ -39,9 +41,11 @@ func _physics_process(delta):
 
 	for i in get_slide_count():
 		var collider = get_slide_collision(i).collider
+		if collider.has_method("activate"):
+			collider.activate()
 		if collider.has_method("kill"):
 			if position.y < collider.position.y - 10:
-				velocity.y = -400
+				velocity.y = -JUMP_POWER/2
 				collider.kill()
 
 func kill():

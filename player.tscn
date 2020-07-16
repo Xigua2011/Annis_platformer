@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://characters/aliens/alien_pink.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player.gd" type="Script" id=3]
+[ext_resource path="res://audio/digital_sfx/source/phaseJump1.ogg" type="AudioStream" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.5473, 45.1373 )
+
+[sub_resource type="AudioStreamRandomPitch" id=2]
+audio_stream = ExtResource( 4 )
+
+[node name="player" type="KinematicBody2D"]
+position = Vector2( 191.019, 204.014 )
+collision_mask = 31
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="alien_pink" parent="." instance=ExtResource( 1 )]
+playing = true
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+position = Vector2( -1.06445, -46.6229 )
+shape = SubResource( 1 )
+
+[node name="phaseJump1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 2 )
+
+[node name="camera_2d" type="Camera2D" parent="."]
+position = Vector2( -127.445, -14.3197 )
+current = true
+limit_top = -300
+limit_bottom = 800
