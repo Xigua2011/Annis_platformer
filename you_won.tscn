@@ -26,9 +26,10 @@ color = Color( 0.898039, 0, 1, 1 )
 margin_left = 249.0
 margin_top = 270.0
 margin_right = 771.0
-margin_bottom = 325.0
+margin_bottom = 365.0
 custom_fonts/normal_font = ExtResource( 1 )
-text = "Well Done! You won :-)"
+text = "Well Done! try level 
+2 now :-)"
 __meta__ = {
 "_edit_use_anchors_": false
 }

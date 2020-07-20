@@ -1,13 +1,13 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://audio/digital_sfx/source/phaseJump1.ogg" type="AudioStream" id=3]
 [ext_resource path="res://items/flagBlue2.png" type="Texture" id=4]
 [ext_resource path="res://tilesets/abstract_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://HUD.gd" type="Script" id=8]
-[ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=9]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=8]
 [ext_resource path="res://backgrounds/backgroundColorGrass.png" type="Texture" id=10]
 [ext_resource path="res://player2.gd" type="Script" id=11]
 [ext_resource path="res://characters/aliens/alien_green.tscn" type="PackedScene" id=12]
@@ -24,9 +24,6 @@ extents = Vector2( 36.7889, 48.4054 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 110.212, 22.5228 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 150, 100 )
 
 [node name="main" type="Node2D"]
 position = Vector2( -2, 0 )
@@ -70,7 +67,10 @@ tile_data = PoolIntArray( -131072, 0, 4, -131040, 0, 131072, -131039, 0, 131072,
 position = Vector2( 61.5752, 32.9354 )
 
 [node name="coin" parent="coins" instance=ExtResource( 6 )]
-position = Vector2( 318.449, 262.816 )
+position = Vector2( 129.365, 255.681 )
+
+[node name="coin11" parent="coins" instance=ExtResource( 6 )]
+position = Vector2( 640.724, -149.839 )
 
 [node name="coin2" parent="coins" instance=ExtResource( 6 )]
 position = Vector2( 803.888, -32.17 )
@@ -113,29 +113,7 @@ texture = ExtResource( 4 )
 position = Vector2( 27.2075, -46.2527 )
 shape = SubResource( 3 )
 
-[node name="platform" type="KinematicBody2D" parent="coins"]
-position = Vector2( 122.212, -224.896 )
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true
-}
-velocity = Vector2( 0, 100 )
-period = 10
-started = true
-
-[node name="color_rect" type="ColorRect" parent="coins/platform"]
-margin_left = -8.78473
-margin_top = 216.0
-margin_right = 218.215
-margin_bottom = 257.0
-color = Color( 1, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="collision_shape_2d" type="CollisionShape2D" parent="coins/platform"]
-position = Vector2( 103.943, 236.865 )
-shape = SubResource( 4 )
+[node name="platform" parent="coins" instance=ExtResource( 2 )]
 
 [node name="platform2" type="KinematicBody2D" parent="coins"]
 position = Vector2( 539.624, -333.114 )
@@ -143,7 +121,6 @@ script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
 }
-velocity = Vector2( 100, 0 )
 period = 10
 
 [node name="color_rect" type="ColorRect" parent="coins/platform2"]
@@ -196,121 +173,4 @@ position = Vector2( 11067.9, 839.659 )
 [node name="enemy10" parent="enemies" instance=ExtResource( 7 )]
 position = Vector2( 7928.78, 129.697 )
 
-[node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource( 8 )
-
-[node name="label" type="Label" parent="HUD"]
-margin_left = 82.9828
-margin_top = 16.3245
-margin_right = 217.983
-margin_bottom = 52.3245
-custom_fonts/font = ExtResource( 9 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "SCORE"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="score" type="Label" parent="HUD"]
-margin_left = 235.505
-margin_top = 16.3245
-margin_right = 370.505
-margin_bottom = 52.3245
-custom_fonts/font = ExtResource( 9 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="left_button" type="TouchScreenButton" parent="HUD"]
-visible = false
-self_modulate = Color( 1, 1, 1, 0.54902 )
-position = Vector2( 150, 500 )
-shape = SubResource( 5 )
-passby_press = true
-visibility_mode = 1
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="color_rect" type="ColorRect" parent="HUD/left_button"]
-margin_left = -150.0
-margin_top = -100.0
-margin_right = 150.0
-margin_bottom = 100.0
-color = Color( 0, 0, 1, 0.486275 )
-
-[node name="label2" type="Label" parent="HUD/left_button"]
-margin_left = -50.0
-margin_top = -15.5
-margin_right = 85.0
-margin_bottom = 20.5
-custom_fonts/font = ExtResource( 9 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "LEFT"
-
-[node name="right_button" type="TouchScreenButton" parent="HUD"]
-visible = false
-self_modulate = Color( 1, 1, 1, 0.54902 )
-position = Vector2( 480, 500 )
-shape = SubResource( 5 )
-passby_press = true
-visibility_mode = 1
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="color_rect" type="ColorRect" parent="HUD/right_button"]
-margin_left = -150.0
-margin_top = -100.0
-margin_right = 150.0
-margin_bottom = 100.0
-color = Color( 0, 0, 1, 0.486275 )
-
-[node name="label2" type="Label" parent="HUD/right_button"]
-margin_left = -50.0
-margin_top = -15.5
-margin_right = 85.0
-margin_bottom = 20.5
-custom_fonts/font = ExtResource( 9 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "RIGHT"
-
-[node name="jump_button" type="TouchScreenButton" parent="HUD"]
-visible = false
-self_modulate = Color( 1, 1, 1, 0.54902 )
-position = Vector2( 870, 500 )
-shape = SubResource( 5 )
-passby_press = true
-visibility_mode = 1
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="color_rect" type="ColorRect" parent="HUD/jump_button"]
-margin_left = -150.0
-margin_top = -100.0
-margin_right = 150.0
-margin_bottom = 100.0
-color = Color( 0, 0, 1, 0.486275 )
-
-[node name="label2" type="Label" parent="HUD/jump_button"]
-margin_left = -50.0
-margin_top = -15.5
-margin_right = 85.0
-margin_bottom = 20.5
-custom_fonts/font = ExtResource( 9 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "JUMP"
-[connection signal="pressed" from="HUD/left_button" to="HUD" method="_on_left_button_pressed"]
-[connection signal="released" from="HUD/left_button" to="HUD" method="_on_left_button_released"]
-[connection signal="pressed" from="HUD/right_button" to="HUD" method="_on_right_button_pressed"]
-[connection signal="released" from="HUD/right_button" to="HUD" method="_on_right_button_released"]
-[connection signal="pressed" from="HUD/jump_button" to="HUD" method="_on_jump_button_pressed"]
-[connection signal="released" from="HUD/jump_button" to="HUD" method="_on_jump_button_released"]
+[node name="HUD" parent="." instance=ExtResource( 8 )]

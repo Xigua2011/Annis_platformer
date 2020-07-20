@@ -1,14 +1,32 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/abstract_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
 
 [node name="Level 2" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 635.698, 310.519 )
+position = Vector2( 642.833, 315.276 )
 
 [node name="tile_map" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 format = 1
 tile_data = PoolIntArray( 393223, 0, 2, 393224, 0, 2, 393225, 0, 2, 393226, 0, 2, 393227, 0, 2, 393228, 0, 2 )
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource( 3 )]
+position = Vector2( 522.219, 358.488 )
+
+[node name="coin2" parent="coins" instance=ExtResource( 3 )]
+position = Vector2( 777.898, 354.92 )
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="platform" parent="platforms" instance=ExtResource( 4 )]
+position = Vector2( 545.57, 123.542 )
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]

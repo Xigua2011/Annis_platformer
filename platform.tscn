@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://platform.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 110.212, 22.5228 )
+
+[node name="platform" type="KinematicBody2D"]
+position = Vector2( 122.212, -224.896 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+velocity = Vector2( 0, 100 )
+period = 10
+started = true
+
+[node name="color_rect" type="ColorRect" parent="."]
+margin_left = -8.78473
+margin_top = 216.0
+margin_right = 218.215
+margin_bottom = 257.0
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+position = Vector2( 103.943, 236.865 )
+shape = SubResource( 4 )
