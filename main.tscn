@@ -39,7 +39,7 @@ position = Vector2( 506.082, 106.148 )
 texture = ExtResource( 10 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 123.343, 201.636 )
+position = Vector2( 143.325, 199.907 )
 
 [node name="player2" type="KinematicBody2D" parent="."]
 position = Vector2( 89.8098, 201.36 )
@@ -175,3 +175,4 @@ position = Vector2( 11067.9, 839.659 )
 position = Vector2( 7928.78, 129.697 )
 
 [node name="HUD" parent="." instance=ExtResource( 8 )]
+[connection signal="body_entered" from="coins/Goal" to="player" method="_on_Goal_body_entered"]
