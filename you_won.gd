@@ -1,23 +1,26 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass 
 
+var time = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	time += delta
 	if Input.is_action_pressed('jump'):
-		get_tree().change_scene("res://main.tscn")
+		get_tree().change_scene("res://Title .tscn")
+	if time > 4:
+		get_tree().change_scene("res://Title .tscn")
+		
+		
+		
 
 
 func _on_button_button_down():
 	print("pressed")
-	get_tree().change_scene("res://main.tscn")
+	get_tree().change_scene("res://Title .tscn")
 	

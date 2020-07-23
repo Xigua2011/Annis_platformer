@@ -47,6 +47,9 @@ func _physics_process(delta):
 			if position.y < collider.position.y - 10:
 				velocity.y = -JUMP_POWER/2
 				collider.kill()
+				
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
 
 func kill():
 	get_tree().reload_current_scene()
