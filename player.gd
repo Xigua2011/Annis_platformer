@@ -57,5 +57,6 @@ func kill():
 
 
 func _on_Goal_body_entered(body):
-	print("hello")
-	get_tree().change_scene("res://you_won.tscn")
+	print("touched goal")
+	if body == self:
+		get_tree().change_scene("res://you_won.tscn")

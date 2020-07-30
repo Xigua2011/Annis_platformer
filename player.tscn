@@ -19,6 +19,7 @@ __meta__ = {
 }
 
 [node name="alien_pink" parent="." instance=ExtResource( 1 )]
+frame = 1
 playing = true
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="."]
@@ -31,5 +32,4 @@ stream = SubResource( 2 )
 [node name="camera_2d" type="Camera2D" parent="."]
 position = Vector2( -127.445, -14.3197 )
 current = true
-limit_top = -300
 limit_bottom = 800
