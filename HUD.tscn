@@ -3,7 +3,7 @@
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=2]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 150, 100 )
 
 [node name="HUD" type="CanvasLayer"]
@@ -36,91 +36,120 @@ __meta__ = {
 }
 
 [node name="left_button" type="TouchScreenButton" parent="."]
-visible = false
 self_modulate = Color( 1, 1, 1, 0.54902 )
-position = Vector2( 150, 500 )
-shape = SubResource( 5 )
+position = Vector2( 0.615723, 398.292 )
+shape = SubResource( 1 )
 passby_press = true
 visibility_mode = 1
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="color_rect" type="ColorRect" parent="left_button"]
-margin_left = -150.0
-margin_top = -100.0
-margin_right = 150.0
-margin_bottom = 100.0
+margin_left = 0.443764
+margin_top = 0.648987
+margin_right = 300.444
+margin_bottom = 200.649
 color = Color( 0, 0, 1, 0.486275 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label2" type="Label" parent="left_button"]
-margin_left = -50.0
-margin_top = -15.5
-margin_right = 85.0
-margin_bottom = 20.5
+margin_left = 82.4329
+margin_top = 80.9112
+margin_right = 217.433
+margin_bottom = 116.911
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "LEFT"
-
-[node name="right_button" type="TouchScreenButton" parent="."]
-visible = false
-self_modulate = Color( 1, 1, 1, 0.54902 )
-position = Vector2( 480, 500 )
-shape = SubResource( 5 )
-passby_press = true
-visibility_mode = 1
 __meta__ = {
-"_edit_group_": true
+"_edit_use_anchors_": false
 }
 
+[node name="right_button" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0.54902 )
+position = Vector2( 356.043, 400.41 )
+shape = SubResource( 1 )
+passby_press = true
+visibility_mode = 1
+
 [node name="color_rect" type="ColorRect" parent="right_button"]
-margin_left = -150.0
-margin_top = -100.0
-margin_right = 150.0
-margin_bottom = 100.0
+margin_left = -0.615753
+margin_top = 2.76791
+margin_right = 299.384
+margin_bottom = 202.768
 color = Color( 0, 0, 1, 0.486275 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label2" type="Label" parent="right_button"]
-margin_left = -50.0
-margin_top = -15.5
-margin_right = 85.0
-margin_bottom = 20.5
+margin_left = 89.8491
+margin_top = 84.0895
+margin_right = 224.849
+margin_bottom = 120.09
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "RIGHT"
 
 [node name="jump_button" type="TouchScreenButton" parent="."]
-visible = false
 self_modulate = Color( 1, 1, 1, 0.54902 )
-position = Vector2( 870, 500 )
-shape = SubResource( 5 )
+position = Vector2( 724.854, 398.292 )
+shape = SubResource( 1 )
 passby_press = true
 visibility_mode = 1
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="color_rect" type="ColorRect" parent="jump_button"]
-margin_left = -150.0
-margin_top = -100.0
-margin_right = 150.0
-margin_bottom = 100.0
+margin_left = 3.62219
+margin_top = 2.76791
+margin_right = 303.622
+margin_bottom = 202.768
 color = Color( 0, 0, 1, 0.486275 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label2" type="Label" parent="jump_button"]
-margin_left = -50.0
-margin_top = -15.5
-margin_right = 85.0
-margin_bottom = 20.5
+margin_left = 66.541
+margin_top = 76.6733
+margin_right = 201.541
+margin_bottom = 112.673
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "JUMP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer" type="Label" parent="."]
+margin_left = 754.338
+margin_top = 15.8919
+margin_right = 881.338
+margin_bottom = 51.8919
+custom_fonts/font = ExtResource( 2 )
+text = "timer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="."]
+margin_left = 886.0
+margin_top = 15.0
+margin_right = 1005.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer2" type="Timer" parent="."]
+autostart = true
 [connection signal="pressed" from="left_button" to="." method="_on_left_button_pressed"]
 [connection signal="released" from="left_button" to="." method="_on_left_button_released"]
 [connection signal="pressed" from="right_button" to="." method="_on_right_button_pressed"]
 [connection signal="released" from="right_button" to="." method="_on_right_button_released"]
 [connection signal="pressed" from="jump_button" to="." method="_on_jump_button_pressed"]
 [connection signal="released" from="jump_button" to="." method="_on_jump_button_released"]
+[connection signal="timeout" from="timer2" to="." method="_on_timer2_timeout"]

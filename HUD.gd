@@ -28,4 +28,9 @@ func _on_jump_button_released():
 	Input.action_release("jump")
 
 
+var time = 0
 
+
+func _on_timer2_timeout():
+	time += 1
+	$time.set_text(str(time))

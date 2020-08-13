@@ -5,6 +5,8 @@
 [ext_resource path="res://you_won.gd" type="Script" id=3]
 [ext_resource path="res://interface/fonts/kenvector_future_20.tres" type="DynamicFont" id=4]
 
+
+
 [node name="control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0

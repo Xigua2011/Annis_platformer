@@ -8,6 +8,7 @@
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=6]
 
 [node name="Level 2" type="Node2D"]
+position = Vector2( 0, -4 )
 
 [node name="color_rect" type="ColorRect" parent="."]
 margin_left = -1183.63

@@ -23,9 +23,9 @@ __meta__ = {
 [node name="Level 2" type="Button" parent="."]
 modulate = Color( 0, 0, 0, 0 )
 margin_left = 224.0
-margin_top = 302.0
+margin_top = 310.0
 margin_right = 436.0
-margin_bottom = 372.0
+margin_bottom = 380.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
