@@ -4,7 +4,10 @@ extends Control
 
 
 func _ready():
-	pass 
+	$Your_score.text = "Your score is "+str(Globals.score) 
+	$Your_time.text = "Your time is "+str(Globals.time)
+	
+
 
 var time = 0
 
