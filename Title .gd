@@ -3,7 +3,7 @@ extends Node2D
 
 # Declare member variables here. Examples:
 # var a = 2
-# var b = "text"
+ # var b       = "text"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,11 +17,13 @@ func _ready():
 
 
 func _on_Level_1_pressed():
-	get_tree().change_scene("res://main.tscn")
+	get_tree().change_scene("res://level1.tscn")
 
 
 func _on_Level_2_pressed():
-	get_tree().change_scene("res://Level 2.tscn")
+	get_tree().change_scene("res://level2.tscn")
 	
 func _on_Quit_pressed():
 	get_tree().quit() 
+	
+

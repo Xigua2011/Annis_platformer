@@ -60,3 +60,8 @@ func _on_Goal_body_entered(body):
 	print("touched goal")
 	if body == self:
 		get_tree().change_scene("res://you_won.tscn")
+		
+
+func _ready():
+	get_tree().get_current_scene().get_node("HUD").set_score(0)
+	Globals.time = 0

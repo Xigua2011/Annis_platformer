@@ -7,7 +7,7 @@
 script = ExtResource( 2 )
 
 [node name="Title for game" type="Sprite" parent="."]
-position = Vector2( 509.642, 301.006 )
+position = Vector2( 510.831, 301.006 )
 texture = ExtResource( 1 )
 
 [node name="Level 1" type="Button" parent="."]
@@ -22,10 +22,10 @@ __meta__ = {
 
 [node name="Level 2" type="Button" parent="."]
 modulate = Color( 0, 0, 0, 0 )
-margin_left = 224.0
-margin_top = 310.0
-margin_right = 436.0
-margin_bottom = 380.0
+margin_left = 227.568
+margin_top = 302.865
+margin_right = 439.568
+margin_bottom = 372.865
 __meta__ = {
 "_edit_use_anchors_": false
 }

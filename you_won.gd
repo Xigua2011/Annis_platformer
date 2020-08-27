@@ -7,6 +7,14 @@ func _ready():
 	$Your_score.text = "Your score is "+str(Globals.score) 
 	$Your_time.text = "Your time is "+str(Globals.time)
 	
+	if Globals.best_score < Globals.score:
+		Globals.best_score = Globals.score
+		print("Best score is "+str(Globals.best_score))
+	
+	if Globals.best_time > Globals.time:
+		Globals.best_time = Globals.time
+		print("Best time is "+str(Globals.best_time))
+	
 
 
 var time = 0
@@ -20,7 +28,7 @@ func _process(delta):
 		get_tree().change_scene("res://Title .tscn")
 		
 		
-		
+
 
 
 func _on_button_button_down():
