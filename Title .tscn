@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Title for game.png" type="Texture" id=1]
 [ext_resource path="res://Title .gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
-[sub_resource type="GradientTexture" id=3]
-
-[sub_resource type="GradientTexture" id=4]
+[sub_resource type="GradientTexture" id=1]
 
 [sub_resource type="GradientTexture" id=2]
+
+[sub_resource type="GradientTexture" id=3]
 
 [node name="Title " type="Node2D"]
 script = ExtResource( 2 )
@@ -20,19 +21,24 @@ texture = ExtResource( 1 )
 modulate = Color( 1, 0, 0, 0 )
 position = Vector2( 218.914, 201.561 )
 scale = Vector2( 0.112279, 55.7285 )
-normal = SubResource( 3 )
+normal = SubResource( 1 )
 
 [node name="Level 2" type="TouchScreenButton" parent="."]
 modulate = Color( 0, 0, 0, 0 )
 position = Vector2( 225.588, 301.674 )
 scale = Vector2( 0.104458, 71.7465 )
-normal = SubResource( 4 )
+normal = SubResource( 2 )
 
 [node name="Quit" type="TouchScreenButton" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 233.674, 429.1 )
 scale = Vector2( 0.0649414, 55 )
-normal = SubResource( 2 )
+normal = SubResource( 3 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 808.133, 387.959 )
+scale = Vector2( 0.865285, 0.83509 )
+texture = ExtResource( 3 )
 [connection signal="pressed" from="Level 1" to="." method="_on_Level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_Level_2_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

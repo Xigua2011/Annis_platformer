@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="GotdotPlatformer"
 run/main_scene="res://Title .tscn"
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
