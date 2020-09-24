@@ -14,6 +14,12 @@ func _ready():
 	if Globals.best_time > Globals.time:
 		Globals.best_time = Globals.time
 		print("Best time is "+str(Globals.best_time))
+		
+	var file = File.new()
+	file.open("user://score.dat", File.WRITE)
+	file.store_16(Globals.best_score)
+	file.store_16(Globals.best_time)
+	file.close()
 	
 
 

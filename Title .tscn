@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Title for game.png" type="Texture" id=1]
 [ext_resource path="res://Title .gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=4]
 
 [sub_resource type="GradientTexture" id=1]
 
@@ -36,9 +37,57 @@ scale = Vector2( 0.0649414, 55 )
 normal = SubResource( 3 )
 
 [node name="icon" type="Sprite" parent="."]
-position = Vector2( 808.133, 387.959 )
+position = Vector2( 799.809, 389.148 )
 scale = Vector2( 0.865285, 0.83509 )
 texture = ExtResource( 3 )
+
+[node name="label" type="Label" parent="."]
+margin_left = 68.7029
+margin_top = 511.568
+margin_right = 466.703
+margin_bottom = 547.568
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.705882, 0, 1, 1 )
+text = "Your High Score is "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="."]
+margin_left = 496.818
+margin_top = 510.378
+margin_right = 901.818
+margin_bottom = 546.378
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.705882, 0, 1, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="."]
+margin_left = 495.628
+margin_top = 560.325
+margin_right = 900.628
+margin_bottom = 596.325
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.705882, 0, 1, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label2" type="Label" parent="."]
+margin_left = 71.0
+margin_top = 564.0
+margin_right = 462.0
+margin_bottom = 600.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.733333, 0, 1, 1 )
+text = "Your Best Time is "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Level 1" to="." method="_on_Level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_Level_2_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
