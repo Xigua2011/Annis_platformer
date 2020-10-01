@@ -13,7 +13,17 @@ var best_time = 9999
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print("globals loading")
+	var file = File.new()
+	var err = file.open("user://score.dat", File.READ)
+	if err == OK:
+		print("file opened ok")
+		score = file.get_16()
+		time = file.get_16()
+		print(score, time)
+		file.close()
+		print("file closed")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
